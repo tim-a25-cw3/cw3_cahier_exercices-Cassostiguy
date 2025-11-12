@@ -1,0 +1,41 @@
+.hero {
+    padding: 80px 0;
+    position: relative;
+    height: 80vh;
+    .wrapper {
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    @media (width <= $breakpoint-sm) {
+        height: 70vh;
+        padding: 70px 0;
+    }
+    @media (width <= $breakpoint-xs) {
+        height: 60vh;
+        padding: 60px 0;
+    }
+}
+
+.hero_content {
+    //normalement aurait été dans le content mais dans ce cas-ci on met l'accent sur le texte et nom l'image donc on met le absolue sur le media.
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    // width: 100%;
+    //height: 100%;
+}
+.hero_media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
