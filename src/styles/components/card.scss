@@ -2,11 +2,37 @@
 .tag {
     font-weight: 300;
 }
+.cards {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    @media (width <= $breakpoint-md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (width <= $breakpoint-sm) {
+        display: block;
+    }
+}
 .card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
     align-items: center;
+    &:nth-child(even) {
+        .card_content {
+            order: -1;
+        }
+    }
+    @media (width <= $breakpoint-md) {
+        display: flex;
+        flex-direction: column;
+        &:nth-child(even) {
+            .card_content {
+                order: unset;
+            }
+        }
+    }
 }
 .card_media {
     aspect-ratio: 594/490;
@@ -38,5 +64,17 @@
     &:hover {
         color: var(--color-black);
         text-decoration: none;
+    }
+}
+.tp {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    .cards {
+        @media (width <= $breakpoint-md) {
+            display: block;
+        }
+        .button {
+            background-color: var(--color-white);
+        }
     }
 }
